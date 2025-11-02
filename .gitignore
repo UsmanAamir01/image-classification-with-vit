@@ -28,6 +28,7 @@ ENV/
 # Jupyter Notebook
 .ipynb_checkpoints
 *.ipynb
+!image-classification-with-vit.ipynb
 
 # Dataset files (large files)
 archive/
