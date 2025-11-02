@@ -492,30 +492,6 @@ def main():
         
         st.markdown("</div>", unsafe_allow_html=True)
         
-        # Sample images section
-        st.markdown('<div class="upload-card animate-slide" style="margin-top: 1.5rem;">', unsafe_allow_html=True)
-        st.markdown("## 🖼️ Or Try Sample Images")
-        
-        sample_options = {
-            "Select a sample...": None,
-            "🍕 Pizza": "archive/images/pizza",
-            "🍣 Sushi": "archive/images/sushi",
-            "🍔 Hamburger": "archive/images/hamburger",
-            "🍦 Ice Cream": "archive/images/ice_cream",
-            "🥞 Pancakes": "archive/images/pancakes",
-            "🍝 Spaghetti Carbonara": "archive/images/spaghetti_carbonara",
-            "🌮 Tacos": "archive/images/tacos",
-            "🍰 Cheesecake": "archive/images/cheesecake"
-        }
-        
-        selected_sample = st.selectbox(
-            "Choose from popular foods:",
-            list(sample_options.keys()),
-            label_visibility="collapsed"
-        )
-        
-        st.markdown("</div>", unsafe_allow_html=True)
-        
         # Tips section
         st.markdown("""
         <div class="info-box animate-fade">
@@ -542,22 +518,6 @@ def main():
                 use_container_width=True,
                 output_format="PNG"
             )
-        
-        elif selected_sample != "Select a sample..." and sample_options[selected_sample] is not None:
-            import os
-            sample_path = sample_options[selected_sample]
-            if os.path.exists(sample_path):
-                # Get first image from the folder
-                images = [f for f in os.listdir(sample_path) if f.lower().endswith(('.jpg', '.jpeg', '.png'))]
-                if images:
-                    image_path = os.path.join(sample_path, images[0])
-                    image_to_predict = Image.open(image_path).convert("RGB")
-                    st.image(
-                        image_to_predict, 
-                        caption=f"📸 Sample: {selected_sample}", 
-                        use_container_width=True,
-                        output_format="PNG"
-                    )
         
         # Make prediction
         if image_to_predict is not None:
