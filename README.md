@@ -2,9 +2,15 @@
 
 A professional web application for food image classification using Vision Transformer (ViT) deep learning model. Built with Streamlit and Hugging Face Transformers.
 
-![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)
-![Streamlit](https://img.shields.io/badge/streamlit-1.28+-red.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+[![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/streamlit-1.28+-red.svg)](https://streamlit.io/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black.svg)](https://github.com/UsmanAamir01/image-classification-with-vit)
+
+## 🔗 Links
+
+- **GitHub Repository**: [https://github.com/UsmanAamir01/image-classification-with-vit](https://github.com/UsmanAamir01/image-classification-with-vit)
+- **Live Demo**: Coming soon on Streamlit Cloud
 
 ## 🌟 Features
 
@@ -32,8 +38,8 @@ Pizza, Sushi, Hamburger, Cheesecake, Pasta, Salad, Ice Cream, Tacos, Ramen, Stea
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/foodvision-ai.git
-cd foodvision-ai
+git clone https://github.com/UsmanAamir01/image-classification-with-vit.git
+cd image-classification-with-vit
 ```
 
 2. **Create a virtual environment** (recommended)
@@ -56,7 +62,10 @@ pip install -r requirements.txt
 
 4. **Download the model** (if not included)
 
-The trained model should be placed in `results/vit-food-classifier-final/`
+The trained model is included in the repository via Git LFS. If you need to manually download it:
+
+- Model files are located in `results/vit-food-classifier-final/`
+- Total size: ~344 MB (stored with Git LFS)
 
 ### Running the Application
 
@@ -66,20 +75,44 @@ streamlit run app.py
 
 The app will open in your default browser at `http://localhost:8501`
 
+## 🎓 Training
+
+To train your own model or reproduce the results:
+
+1. Open the Jupyter notebook:
+
+   ```bash
+   jupyter notebook image-classification-with-vit.ipynb
+   ```
+
+2. Follow the notebook cells to:
+   - Load and preprocess the Food-101 dataset
+   - Fine-tune the Vision Transformer model
+   - Evaluate performance
+   - Save the trained model
+
 ## 📦 Project Structure
 
 ```
-foodvision-ai/
+image-classification-with-vit/
 │
 ├── app.py                          # Main Streamlit application
+├── image-classification-with-vit.ipynb  # Training notebook
 ├── requirements.txt                # Python dependencies
 ├── .gitignore                     # Git ignore file
+├── .gitattributes                 # Git LFS configuration
+├── LICENSE                        # MIT License
 ├── README.md                      # This file
 │
+├── archive/
+│   ├── images/                    # Sample food images (101 categories)
+│   └── meta/                      # Metadata files
+│
 └── results/
+    ├── label_mappings.json        # Category label mappings
     └── vit-food-classifier-final/  # Trained model files
         ├── config.json
-        ├── model.safetensors
+        ├── model.safetensors       # Model weights (344 MB)
         ├── preprocessor_config.json
         └── label_mappings.json
 ```
@@ -96,7 +129,9 @@ foodvision-ai/
 
 ## 🤖 Model Details
 
-- **Architecture**: Vision Transformer (ViT)
+- **Architecture**: Vision Transformer (ViT) - `google/vit-base-patch16-224-in21k`
+- **Base Model**: Pre-trained on ImageNet-21k
+- **Fine-tuned On**: Food-101 Dataset
 - **Hidden Size**: 768 dimensions
 - **Attention Heads**: 12 heads
 - **Layers**: 12 transformer blocks
@@ -104,6 +139,7 @@ foodvision-ai/
 - **Parameters**: ~86M
 - **Input Size**: 224×224 RGB images
 - **Framework**: Hugging Face Transformers
+- **Classes**: 101 food categories
 
 ## 💡 Usage Tips
 
@@ -143,6 +179,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 👨‍💻 Author
 
+**Usman Aamir**
+
+- GitHub: [@UsmanAamir01](https://github.com/UsmanAamir01)
+- Repository: [image-classification-with-vit](https://github.com/UsmanAamir01/image-classification-with-vit)
+
 Built with ❤️ using Streamlit & Hugging Face
 
 ## 🙏 Acknowledgments
@@ -153,7 +194,10 @@ Built with ❤️ using Streamlit & Hugging Face
 
 ## 📧 Contact
 
-For questions or feedback, please open an issue on GitHub.
+For questions or feedback, please:
+
+- Open an issue on [GitHub](https://github.com/UsmanAamir01/image-classification-with-vit/issues)
+- Visit the repository: [https://github.com/UsmanAamir01/image-classification-with-vit](https://github.com/UsmanAamir01/image-classification-with-vit)
 
 ---
 
